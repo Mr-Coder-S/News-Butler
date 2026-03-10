@@ -11,7 +11,7 @@ def News():
     news_list = []
 
     for query in queries:
-        nws_source = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={date}&language=en&sortBy=publishedAt&apiKey=50826445f0424788a4a33312649e70fd")
+        nws_source = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={date}&language=en&sortBy=publishedAt&apiKey='API'")
         
         news = json.loads(nws_source.text)
         Top_five = news["articles"][:5]
@@ -19,3 +19,4 @@ def News():
             news_list.append(article["title"])
 
     return news_list
+
